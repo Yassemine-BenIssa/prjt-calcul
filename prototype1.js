@@ -1,26 +1,23 @@
 // Variables
-var a,b,solution,operation;
+var a,b,resultat,operation;
 var aStock, bStock;
-
-
-
 // Métier
 function Calculer(a,b,operation){
-    let _solution = undefined;
+    let _résultat = undefined;
     switch (operation) {
         case '+':
-            _solution = a + b;
+            _résultat = a + b;
             break;
         case '-':
-            _solution = a-b;
+            _résultat = a-b;
+
                 break;
     }
-    return _solution;
+    return _résultat;
 }
 
-
 // Présentation
-function ClickNumber(number){
+function output(number){
     if(a == undefined){
         if(aStock == undefined) aStock = '';
         aStock += number;
@@ -66,8 +63,8 @@ function Operation(operationParam){
 function Egale(){
     a = parseFloat(aStock);
     b = parseFloat(bStock);
-    solution = Calculer(a,b,operation);
-    Afficher(solution);
+    résultat = Calculer(a,b,operation);
+    Afficher(résultat);
 }
 
 function Init(){
