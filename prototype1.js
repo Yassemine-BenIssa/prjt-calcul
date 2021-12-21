@@ -1,10 +1,10 @@
 // Variables
-var a,b,resultat,operation;
+var a,b,resultat,action;
 var aStock, bStock;
 // Métier
-function Calculer(a,b,operation){
+function Calculer(a,b,action){
     let _résultat = undefined;
-    switch (operation) {
+    switch (action) {
         case '+':
             _résultat = a + b;
             break;
@@ -35,14 +35,14 @@ function Afficher(number){
     let afficheur = document.getElementById("afficheur");
     afficheur.value = "";
 
-    if(a != undefined && b != undefined && operation != undefined){
+    if(a != undefined && b != undefined && action != undefined){
 
         afficheur.value = number;
     }else{
         if(aStock != undefined)
         afficheur.value += aStock 
-        if(operation != undefined)
-            afficheur.value += operation
+        if(action != undefined)
+            afficheur.value += action
         if(bStock != undefined)
             afficheur.value += bStock 
 
@@ -52,9 +52,9 @@ function Afficher(number){
 }
 
 
-function Operation(operationParam){
-    if(operation == undefined){
-        operation = operationParam;
+function action(actionParam){
+    if(action == undefined){
+        action = actionParam;
         a = parseFloat(aStock);
         Afficher();
     }
@@ -63,7 +63,7 @@ function Operation(operationParam){
 function Egale(){
     a = parseFloat(aStock);
     b = parseFloat(bStock);
-    résultat = Calculer(a,b,operation);
+    résultat = Calculer(a,b,action);
     Afficher(résultat);
 }
 
@@ -72,7 +72,7 @@ function Init(){
     b = undefined;
     aStock = undefined;
     bStock = undefined;
-    operation = undefined;
+    action = undefined;
     let afficheur = document.getElementById("afficheur");
 
     afficheur.value = "";
